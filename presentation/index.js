@@ -1,5 +1,8 @@
 // Import React
 import React from 'react';
+import LifeHistory from './life-history';
+
+import PR1 from '../assets/pr1.png';
 
 // Import Spectacle Core tags
 import {
@@ -13,15 +16,20 @@ import {
   Notes,
   Quote,
   Slide,
-  Text
+  Text,
+  Link,
+  GoToAction
 } from 'spectacle';
 
 // Import theme
 import createTheme from 'spectacle/lib/themes/default';
 
 const images = {
-  formidagon: require('../assets/formidable-logo.svg'),
-  goodWork: require('../assets/good-work.gif')
+  formidagon: require('../assets/formidable.jpg'),
+  PR1: require('../assets/pr1.png'),
+  sorutime: require('../assets/sorutime.png'),
+  animated: require('../assets/animated.gif'),
+  animated1: require('../assets/animated1.gif')
 };
 
 // Require CSS
@@ -48,60 +56,169 @@ export default class Presentation extends React.Component {
         transitionDuration={500}
         theme={theme}
       >
-        <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={1} fit caps lineHeight={1} textColor="secondary">
-            Spectacle Boilerplate
-          </Heading>
-          <Text margin="10px 0 0" textColor="tertiary" fit bold>
-            open the presentation/index.js file to get started
-          </Text>
+        <Slide>
+          <Heading>Open Your Heart to Open Source</Heading>
         </Slide>
-        <Slide bgColor="secondary">
-          <Image src={images.formidagon} width={800} />
+        <Slide>
+          <Heading>So about me</Heading>
+          <br />
+          <iframe
+            src="https://giphy.com/embed/5hbbUWcuvtoJGx5fQ4"
+            width="480"
+            height="240"
+            frameBorder="0"
+            className="giphy-embed"
+            allowFullScreen
+          />
         </Slide>
-        <Slide transition={['fade']} bgColor="tertiary">
-          <Heading size={6} textColor="primary" caps>
-            Typography
+        <Slide>
+          <Heading size={2} textColor={'tertiary'}>
+            Business Analyst
           </Heading>
-          <Heading size={1} textColor="secondary">
-            Heading 1
+          <iframe
+            src="https://giphy.com/embed/8Q31McooUHTNu"
+            width="480"
+            height="274"
+            frameBorder="0"
+            className="giphy-embed"
+            allowFullScreen
+          />
+          <iframe
+            src="https://giphy.com/embed/HB4mYkjjFcvNm"
+            width="480"
+            height="271"
+            frameBorder="0"
+            className="giphy-embed"
+            allowFullScreen
+          />
+          <iframe
+            src="https://giphy.com/embed/FxkDFjnaN9Iv6"
+            width="480"
+            height="202"
+            frameBorder="0"
+            className="giphy-embed"
+            allowFullScreen
+          />
+        </Slide>
+        <Slide>
+          <Heading size={2} textColor={'tertiary'}>
+            Technology
           </Heading>
-          <Heading size={2} textColor="secondary">
-            Heading 2
+          <iframe
+            src="https://giphy.com/embed/6OrCT1jVbonHG"
+            width="480"
+            height="300"
+            frameBorder="0"
+            className="giphy-embed"
+            allowFullScreen
+          />
+          <iframe
+            src="https://giphy.com/embed/wpoLqr5FT1sY0"
+            width="480"
+            height="348"
+            frameBorder="0"
+            className="giphy-embed"
+            allowFullScreen
+          />
+        </Slide>
+        <Slide>
+          <Image src={images.sorutime} />
+        </Slide>
+        <Slide>
+          <Image src={images.animated1} />
+        </Slide>
+        <Slide bgImage={images.formidagon}>
+          <Heading
+            size={4}
+            textColor={'primary'}
+            style={{ marginTop: '250px' }}
+          >
+            Software Engineer
           </Heading>
-          <Heading size={3} textColor="secondary">
-            Heading 3
-          </Heading>
-          <Heading size={4} textColor="secondary">
-            Heading 4
-          </Heading>
-          <Heading size={5} textColor="secondary">
-            Heading 5
-          </Heading>
-          <Text size={6} textColor="secondary">
-            Standard text
-          </Text>
+        </Slide>
+        <Slide>
+          This is where our hero gets introduced <Heading>Open Source</Heading>
+        </Slide>
+        <Slide>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between'
+            }}
+          >
+            <List>
+              <ListItem>Big</ListItem>
+              <ListItem>Fat</ListItem>
+              <ListItem>Scary</ListItem>
+              <ListItem>Confusing</ListItem>
+              <ListItem>Beautiful</ListItem>
+            </List>
+            <iframe
+              src="https://giphy.com/embed/TLfdcaTrgz9PW"
+              width="444"
+              height="480"
+              frameBorder="0"
+              className="giphy-embed"
+              allowFullScreen
+            />
+          </div>
+        </Slide>
+        <Slide>Nuka Carousel</Slide>
+        <Slide>
+          <List>
+            <Link href="https://github.com/FormidableLabs/nuka-carousel/issues/177">
+              AfterSlide
+            </Link>
+            <GoToAction
+              render={(goToSlide) => (
+                <p onClick={() => goToSlide(9)}>New feature withoutControls</p>
+              )}
+            />
+            <Link href="https://github.com/FormidableLabs/nuka-carousel/pull/412">
+              Fix Bug initialSlideHeight
+            </Link>
+          </List>
+        </Slide>
+        <Slide goTo={8}>
+          <Image src={PR1} />
         </Slide>
         <Slide transition={['fade']} bgColor="primary" textColor="tertiary">
           <Heading size={6} textColor="secondary" caps>
-            Standard List
+            My Learnings
           </Heading>
           <List>
-            <ListItem>Item 1</ListItem>
-            <ListItem>Item 2</ListItem>
-            <ListItem>Item 3</ListItem>
-            <ListItem>Item 4</ListItem>
+            <ListItem>Code for a problem not just an idea</ListItem>
+            <ListItem>Clean code</ListItem>
+            <ListItem>Design process for coding</ListItem>
+            <ListItem>Fun</ListItem>
+            <ListItem>Get in touch with the community</ListItem>
+            <ListItem>
+              Understanding different use cases for a single tiny piece of code
+            </ListItem>
+            <ListItem>Talking out solutions</ListItem>
+            <ListItem>
+              Accepting mistakes and learn to roll back or move forward on
+              decisions
+            </ListItem>
+            <ListItem>Git</ListItem>
           </List>
         </Slide>
-        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
-          <BlockQuote>
-            <Quote>Example Quote</Quote>
-            <Cite margin="10px 0 0 30px">Author</Cite>
-          </BlockQuote>
-        </Slide>
-        <Slide>
-          <Image src={images.goodWork} width={500} />
-          <Notes>gifs work too</Notes>
+        <Slide bgColor="primary" textColor="tertiary">
+          <Heading size={6} textColor="secondary" caps>
+            Few things that can get you started
+          </Heading>
+          <List>
+            <ListItem> Documentation</ListItem>
+            <ListItem>Testing a bug and reporting with verifications</ListItem>
+            <ListItem>Sample code for bugs</ListItem>
+            <ListItem>Provide your work arounds / hacks</ListItem>
+            <ListItem>Actual Solution</ListItem>
+            <ListItem>
+              Refactor code for understandability / readability
+            </ListItem>
+            <ListItem>Build new feature</ListItem>
+          </List>
         </Slide>
       </Deck>
     );

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Heading } from 'spectacle';
+import formidableLogo from '../assets/formidable-logo.svg';
 
 export default class Interactive extends Component {
   constructor() {
